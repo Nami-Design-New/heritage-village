@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
+
+@mixin centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clearInput {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+:target {
+  scroll-margin-top: 100px;
+}
+
+.fancybox__container {
+  z-index: 1999;
+}
+
+.fancybox__track,
+.fancybox__content,
+.carousel__track {
+  direction: ltr !important;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--white-color-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  height: 300px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+$main: #aa9674;
+$main5: #faf7f4;
+$main30: #eae0d4;
+$white: #fff;
+$gray: #777;
+$black: #000;
+$second: #11112d;
+
+body {
+  background: #101010;
+  overflow-x: hidden;
+  position: relative;
+  direction: rtl;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.elementor-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  h6 {
+    color: $black;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    margin: 0;
+    &::before {
+      content: "";
+      width: 6rem;
+      height: 6rem;
+      background-image: url("/assets/images/logo.svg");
+      filter: grayscale(1);
+      opacity: 0.15;
+      position: absolute;
+      top: -12px;
+      background-size: contain;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  img {
+    height: 1rem;
+    display: none;
+  }
+  &::before {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: #a69d8480;
+    display: none;
+  }
+}
+
+.elementor-subtitle {
+  color: #777;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section_head {
+  width: 100%;
+  @include space-between();
+  .elementor-title {
+    justify-content: flex-start;
+  }
+  .elementor-subtitle {
+    text-align: start;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    .elementor-title {
+      justify-content: center;
+    }
+    .elementor-subtitle {
+      text-align: center;
+    }
+  }
+}
+
+.preloader {
+  background-color: #101010;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .preloaderImg {
+    width: 100px;
+    height: 100px;
+    mask-image: url("../images/logo.png");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      z-index: 2;
+      background-color: $main;
+      transform: translateY(100%);
+      animation: slide-up 1.5s forwards;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 200px;
+      height: 200px;
+      background-image: url("../images/logo.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: grayscale(1) opacity(0.5);
+    }
+    @keyframes slide-up {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0%);
+      }
+    }
+  }
+}
+
+a[href*="tel"] {
+  direction: ltr;
+}
