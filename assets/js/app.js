@@ -17,3 +17,27 @@ $(document).ready(function () {
     once: true,
   });
 });
+
+// Menu toggle functionality
+const menuButton = document.querySelector(".menu-button");
+const navLinks = document.querySelector(".nav-links");
+const layer = document.querySelector(".layer");
+
+navLinks.querySelectorAll("li").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    layer.classList.remove("active");
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!navLinks.contains(e.target) && !menuButton.contains(e.target)) {
+    navLinks.classList.remove("active");
+    layer.classList.remove("active");
+  }
+});
+
+menuButton.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  layer.classList.toggle("active");
+});

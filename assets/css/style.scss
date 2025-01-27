@@ -23,7 +23,7 @@ header {
     .logo {
       @include centerFlex();
       img {
-        height: 36px;
+        height: 32px;
         object-fit: contain;
       }
     }
@@ -34,13 +34,17 @@ header {
       gap: 2.5rem;
       transition: all 0.4s ease-in-out;
       z-index: 9;
+      img {
+        height: 32px;
+        object-fit: contain;
+      }
       li.hide_lg {
         display: none;
       }
       @media screen and (max-width: 768px) {
         padding: 2rem 1.5rem;
         position: fixed;
-        background: $white;
+        background: #101010;
         height: 100vh;
         top: 0;
         right: -50%;
@@ -101,12 +105,18 @@ main {
 
   .hero {
     padding: 120px 0;
+    @media screen and (max-width: 768px) {
+      padding: 60px 0;
+    }
     .content {
       h1 {
         color: #fff;
         font-size: 58px;
         line-height: 1.5;
         margin-bottom: 1rem;
+        @media screen and (max-width: 768px) {
+          font-size: 46px;
+        }
       }
       p {
         color: $gray;
@@ -205,24 +215,21 @@ footer {
       padding: 0;
     }
     a {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       @include centerFlex();
-      background: $white;
-      border-radius: 50%;
+      background: $main;
+      border-radius: 4px;
       font-size: 14px;
       transition: all 0.4s ease-in-out;
       i {
-        color: $main;
-      }
-      svg {
-        stroke: $main;
+        color: $white;
       }
       &:hover {
-        background: $main;
+        background: $white;
         transform: translateY(-4px);
         i {
-          color: $white;
+          color: $main;
         }
       }
     }
@@ -256,6 +263,10 @@ footer {
     margin-top: 32px;
     padding-top: 16px;
     border-top: 1px solid #292929;
+    gap: 16px;
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
     p {
       color: $white;
       line-height: 26px;

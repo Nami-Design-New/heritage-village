@@ -240,7 +240,7 @@ header nav .logo {
   justify-content: center;
 }
 header nav .logo img {
-  height: 36px;
+  height: 32px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -252,6 +252,11 @@ header nav .nav-links {
   transition: all 0.4s ease-in-out;
   z-index: 9;
 }
+header nav .nav-links img {
+  height: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 header nav .nav-links li.hide_lg {
   display: none;
 }
@@ -259,7 +264,7 @@ header nav .nav-links li.hide_lg {
   header nav .nav-links {
     padding: 2rem 1.5rem;
     position: fixed;
-    background: #fff;
+    background: #101010;
     height: 100vh;
     top: 0;
     right: -50%;
@@ -321,11 +326,21 @@ main {
 main .hero {
   padding: 120px 0;
 }
+@media screen and (max-width: 768px) {
+  main .hero {
+    padding: 60px 0;
+  }
+}
 main .hero .content h1 {
   color: #fff;
   font-size: 58px;
   line-height: 1.5;
   margin-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+  main .hero .content h1 {
+    font-size: 46px;
+  }
 }
 main .hero .content p {
   color: #777;
@@ -423,28 +438,25 @@ footer .social li {
   padding: 0;
 }
 footer .social a {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  border-radius: 50%;
+  background: #aa9674;
+  border-radius: 4px;
   font-size: 14px;
   transition: all 0.4s ease-in-out;
 }
 footer .social a i {
-  color: #aa9674;
-}
-footer .social a svg {
-  stroke: #aa9674;
+  color: #fff;
 }
 footer .social a:hover {
-  background: #aa9674;
+  background: #fff;
   transform: translateY(-4px);
 }
 footer .social a:hover i {
-  color: #fff;
+  color: #aa9674;
 }
 footer h3 {
   color: #fff;
@@ -479,6 +491,12 @@ footer .copy {
   margin-top: 32px;
   padding-top: 16px;
   border-top: 1px solid #292929;
+  gap: 16px;
+}
+@media screen and (max-width: 768px) {
+  footer .copy {
+    flex-direction: column-reverse;
+  }
 }
 footer .copy p {
   color: #fff;
