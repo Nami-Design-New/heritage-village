@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -51,7 +51,7 @@ body {
   overflow-x: hidden;
   position: relative;
   direction: rtl;
-  font-family: "Baloo Bhaijaan 2", sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 ul {
@@ -165,8 +165,8 @@ textarea {
 .preloader .preloaderImg {
   width: 100px;
   height: 100px;
-  -webkit-mask-image: url("../images/logo.png");
-          mask-image: url("../images/logo.png");
+  -webkit-mask-image: url("../images/logo.svg");
+          mask-image: url("../images/logo.svg");
   -webkit-mask-size: contain;
           mask-size: contain;
   -webkit-mask-position: center;
@@ -183,7 +183,7 @@ textarea {
   width: 200px;
   height: 200px;
   z-index: 2;
-  background-color: #aa9674;
+  background-color: #a79373;
   transform: translateY(100%);
   animation: slide-up 1.5s forwards;
 }
@@ -192,7 +192,7 @@ textarea {
   display: block;
   width: 200px;
   height: 200px;
-  background-image: url("../images/logo.png");
+  background-image: url("../images/logo.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -368,7 +368,7 @@ main .hero .content .animated_button::before {
   z-index: -1;
   position: absolute;
   transition: all 0.4s ease-in-out;
-  background: #aa9674;
+  background: #a79373;
 }
 main .hero .content .animated_button::after {
   content: "";
@@ -378,7 +378,7 @@ main .hero .content .animated_button::after {
   height: 100%;
   transition: all 0.4s ease-in-out;
   position: absolute;
-  background: #aa9674;
+  background: #a79373;
   z-index: -1;
 }
 main .hero .content .animated_button:hover {
@@ -409,6 +409,9 @@ main .hero .img img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+main .contact_section {
+  padding-top: 60px;
+}
 main .contact_section .contact_info {
   width: 100%;
   height: 100%;
@@ -418,13 +421,13 @@ main .contact_section .contact_info {
 }
 main .contact_section .contact_info h3 {
   font-size: 22px;
-  color: #aa9674;
+  color: #a79373;
   font-weight: 600;
   margin-bottom: 48px;
 }
 main .contact_section .contact_info h5 {
   font-size: 22px;
-  color: #aa9674;
+  color: #a79373;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -466,7 +469,7 @@ main .contact_section .contact_info .field .icon::after {
   left: 0;
   opacity: 0;
   z-index: 0;
-  background: #aa9674;
+  background: #a79373;
 }
 main .contact_section .contact_info .field .icon i {
   font-size: 24px;
@@ -479,17 +482,17 @@ main .contact_section .contact_info .field .text {
 }
 main .contact_section .contact_info .field .text h4 {
   margin-bottom: 4px;
-  color: #aa9674;
+  color: #a79373;
   font-size: 18px;
 }
 main .contact_section .contact_info .field .text a {
   color: #777;
 }
 main .contact_section .contact_info .field:hover .text a {
-  color: #aa9674;
+  color: #a79373;
 }
 main .contact_section .contact_info .field:hover .icon {
-  background: #aa9674;
+  background: #a79373;
   border-color: transparent;
 }
 main .contact_section .contact_info .field:hover .icon i {
@@ -529,13 +532,13 @@ main .contact_section form .input_field textarea {
 }
 main .contact_section form .input_field input:focus,
 main .contact_section form .input_field textarea:focus {
-  border-color: #aa9674;
+  border-color: #a79373;
 }
 main .contact_section form button {
   padding: 12px 16px;
-  border: 1px solid #aa9674;
+  border: 1px solid #a79373;
   border-radius: 12px;
-  background: #aa9674;
+  background: #a79373;
   color: #fff;
   font-size: 16px;
   margin-top: 12px;
@@ -544,11 +547,199 @@ main .contact_section form button {
 }
 main .contact_section form button:hover {
   background: #fff;
-  color: #aa9674;
+  color: #a79373;
 }
 main .contact_section .map {
   height: 420px;
   margin-top: 32px;
+}
+main .gallery_section {
+  padding: 100px 0;
+  background: #a79373;
+  position: relative;
+}
+main .gallery_section::after {
+  content: "";
+  position: absolute;
+  top: -46px;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: url("../images/pattern.svg");
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: bottom;
+}
+main .gallery_section .img {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+main .gallery_section .img a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+main .gallery_section .img::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2549019608);
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+}
+main .gallery_section .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+main .gallery_section .img:hover::after {
+  opacity: 1;
+}
+main .gallery_section .img:hover img {
+  transform: scale(1.1) rotate(-2deg);
+}
+main .gallery_section .swiper-controls {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  height: 70px;
+}
+main .gallery_section .swiper-controls .service-button-next, main .gallery_section .swiper-controls .service-button-prev {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+main .gallery_section .swiper-controls .service-button-next:hover, main .gallery_section .swiper-controls .service-button-prev:hover {
+  width: 65px;
+  height: 65px;
+  border-color: #fff;
+}
+main .gallery_section .swiper-controls .service-button-prev::before {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 1px;
+  background: #fff;
+  top: 50%;
+  left: 88%;
+  transform: translate(-20%, -50%);
+  transition: all 0.4s ease-in-out;
+}
+main .gallery_section .swiper-controls .service-button-prev::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: 6px solid #fff;
+  top: 50%;
+  left: calc(70% - 4px);
+  transform: translateY(-50%);
+  transition: all 0.4s ease-in-out;
+}
+main .gallery_section .swiper-controls .service-button-prev:hover::before {
+  width: 36px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .gallery_section .swiper-controls .service-button-prev:hover::after {
+  left: calc(20% - 4px);
+}
+main .gallery_section .swiper-controls .service-button-next::before {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 1px;
+  background: #fff;
+  top: 50%;
+  left: -12%;
+  transform: translate(-60%, -50%);
+  transition: all 0.4s ease-in-out;
+}
+main .gallery_section .swiper-controls .service-button-next::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid #fff;
+  top: 50%;
+  left: calc(30% - 4px);
+  transform: translateY(-50%);
+  transition: all 0.4s ease-in-out;
+}
+main .gallery_section .swiper-controls .service-button-next:hover::before {
+  width: 36px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .gallery_section .swiper-controls .service-button-next:hover::after {
+  left: calc(80% - 4px);
+}
+main .last_blogs_section {
+  padding: 80px 0;
+}
+main .last_blogs_section .title,
+main .last_blogs_section .subtitle {
+  color: #fff;
+  text-align: center;
+}
+main .last_blogs_section .blog_card {
+  width: 100%;
+  background: #000;
+  border-radius: 16px;
+}
+main .last_blogs_section .blog_card .img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  border-radius: 16px;
+}
+main .last_blogs_section .blog_card .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .last_blogs_section .blog_card .content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+main .last_blogs_section .blog_card .content h6 {
+  color: #fff;
+  font-size: 16px;
+}
+main .last_blogs_section .blog_card .content p {
+  color: #fff;
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+main .last_blogs_section .blog_card .content a {
+  color: #a79373;
 }
 
 footer {
@@ -584,7 +775,7 @@ footer .social a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #aa9674;
+  background: #a79373;
   border-radius: 4px;
   font-size: 14px;
   transition: all 0.4s ease-in-out;
@@ -597,7 +788,7 @@ footer .social a:hover {
   transform: translateY(-4px);
 }
 footer .social a:hover i {
-  color: #aa9674;
+  color: #a79373;
 }
 footer h3 {
   color: #fff;
@@ -623,7 +814,7 @@ footer ul li a {
   transition: all 0.4s ease-in-out;
 }
 footer ul li a:hover {
-  color: #aa9674;
+  color: #a79373;
 }
 footer .copy {
   display: flex;
@@ -644,5 +835,5 @@ footer .copy p {
   line-height: 26px;
 }
 footer .copy p a {
-  color: #aa9674;
+  color: #a79373;
 }/*# sourceMappingURL=style.css.map */

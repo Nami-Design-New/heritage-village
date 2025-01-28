@@ -187,6 +187,7 @@ main {
   }
 
   .contact_section {
+    padding-top: 60px;
     .contact_info {
       width: 100%;
       height: 100%;
@@ -326,6 +327,216 @@ main {
     .map {
       height: 420px;
       margin-top: 32px;
+    }
+  }
+
+  .gallery_section {
+    padding: 100px 0;
+    background: $main;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -46px;
+      left: 0;
+      width: 100%;
+      height: 48px;
+      background: url("../images/pattern.svg");
+      background-size: contain;
+      background-repeat: repeat;
+      background-position: bottom;
+    }
+    .img {
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+        z-index: 1;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background: #00000041;
+        transition: 0.4s ease-in-out;
+        opacity: 0;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s ease-in-out;
+      }
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+        img {
+          transform: scale(1.1) rotate(-2deg);
+        }
+      }
+    }
+    .swiper-controls {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      height: 70px;
+
+      %button-base {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          width: 65px;
+          height: 65px;
+          border-color: $white;
+        }
+      }
+
+      .service-button-prev {
+        @extend %button-base;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 42px;
+          height: 1px;
+          background: $white;
+          top: 50%;
+          left: 88%;
+          transform: translate(-20%, -50%);
+          transition: all 0.4s ease-in-out;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-top: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-right: 6px solid $white;
+          top: 50%;
+          left: calc(70% - 4px);
+          transform: translateY(-50%);
+          transition: all 0.4s ease-in-out;
+        }
+
+        &:hover {
+          &::before {
+            width: 36px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &::after {
+            left: calc(20% - 4px);
+          }
+        }
+      }
+
+      .service-button-next {
+        @extend %button-base;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 42px;
+          height: 1px;
+          background: $white;
+          top: 50%;
+          left: -12%;
+          transform: translate(-60%, -50%);
+          transition: all 0.4s ease-in-out;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-top: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-left: 6px solid $white;
+          top: 50%;
+          left: calc(30% - 4px);
+          transform: translateY(-50%);
+          transition: all 0.4s ease-in-out;
+        }
+
+        &:hover {
+          &::before {
+            width: 36px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &::after {
+            left: calc(80% - 4px);
+          }
+        }
+      }
+    }
+  }
+
+  .last_blogs_section {
+    padding: 80px 0;
+    .title,
+    .subtitle {
+      color: $white;
+      text-align: center;
+    }
+
+    .blog_card {
+      width: 100%;
+      background: $black;
+      border-radius: 16px;
+      .img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        border-radius: 16px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .content {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        h6 {
+          color: $white;
+          font-size: 16px;
+        }
+        p {
+          color: $white;
+          font-size: 12px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          margin: 0;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        a {
+          color: $main;
+        }
+      }
     }
   }
 }

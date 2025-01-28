@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
 
 @mixin centerFlex {
   display: flex;
@@ -73,7 +73,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-$main: #aa9674;
+$main: #a79373;
 $main5: #faf7f4;
 $main30: #eae0d4;
 $white: #fff;
@@ -86,7 +86,7 @@ body {
   overflow-x: hidden;
   position: relative;
   direction: rtl;
-  font-family: "Baloo Bhaijaan 2", sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 ul {
@@ -196,7 +196,7 @@ textarea {
   .preloaderImg {
     width: 100px;
     height: 100px;
-    mask-image: url("../images/logo.png");
+    mask-image: url("../images/logo.svg");
     mask-size: contain;
     mask-position: center;
     mask-repeat: no-repeat;
@@ -218,7 +218,7 @@ textarea {
       display: block;
       width: 200px;
       height: 200px;
-      background-image: url("../images/logo.png");
+      background-image: url("../images/logo.svg");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
