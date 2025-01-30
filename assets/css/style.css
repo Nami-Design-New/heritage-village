@@ -165,14 +165,10 @@ textarea {
 .preloader .preloaderImg {
   width: 100px;
   height: 100px;
-  -webkit-mask-image: url("../images/logo.svg");
-          mask-image: url("../images/logo.svg");
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-position: center;
-          mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
+  mask-image: url("../images/logo.svg");
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
   position: relative;
 }
 .preloader .preloaderImg::after {
@@ -218,8 +214,7 @@ header {
   width: 100%;
   z-index: 1000;
   padding: 16px 0;
-  -webkit-backdrop-filter: blur(24px);
-          backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
 }
 header.scrolled {
   background: #fff;
@@ -241,8 +236,7 @@ header nav .logo {
 }
 header nav .logo img {
   height: 32px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 header nav .nav-links {
   display: flex;
@@ -254,8 +248,7 @@ header nav .nav-links {
 }
 header nav .nav-links img {
   height: 32px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 header nav .nav-links li.hide_lg {
   display: none;
@@ -351,7 +344,6 @@ main .hero .content .animated_button {
   background: #fff;
   color: #000;
   display: block;
-  width: -moz-fit-content;
   width: fit-content;
   border-radius: 50px;
   position: relative;
@@ -406,8 +398,7 @@ main .hero .img::before {
 main .hero .img img {
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .contact_section {
   padding-top: 60px;
@@ -599,8 +590,7 @@ main .gallery_section .img::after {
 main .gallery_section .img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: 0.5s ease-in-out;
 }
 main .gallery_section .img:hover::after {
@@ -716,8 +706,7 @@ main .last_blogs_section .blog_card .img {
 main .last_blogs_section .blog_card .img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .last_blogs_section .blog_card .content {
   padding: 24px;
@@ -836,4 +825,292 @@ footer .copy p {
 }
 footer .copy p a {
   color: #a79373;
-}/*# sourceMappingURL=style.css.map */
+}
+
+main .about-us .section-header {
+  background: #a79373;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+main .about-us .section-header::after {
+  content: "";
+  position: absolute;
+  bottom: -46px;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: url("../images/pattern.svg");
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: bottom;
+  transform: rotate(180deg);
+}
+main .about-us .container {
+  padding-top: 60px;
+}
+main .about-us .container .content .title {
+  color: #a79373;
+}
+main .about-us .container .content .text {
+  color: #faf7f4;
+}
+main .about-us .container .content .animated_button {
+  padding: 8px 24px;
+  background: #fff;
+  color: #000;
+  display: block;
+  width: fit-content;
+  border-radius: 50px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+main .about-us .container .content .animated_button::before {
+  content: "";
+  top: -100%;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  background: #a79373;
+}
+main .about-us .container .content .animated_button::after {
+  content: "";
+  top: 100%;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  background: #a79373;
+  z-index: -1;
+}
+main .about-us .container .content .animated_button:hover {
+  color: #fff;
+}
+main .about-us .container .content .animated_button:hover::before {
+  top: 0;
+}
+main .about-us .container .content .animated_button:hover::after {
+  top: 0;
+}
+@media screen and (max-width: 768px) {
+  main .about-us .container .content .animated_button {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .about-us .container .content {
+    text-align: center;
+  }
+}
+main .about-us .about-img {
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+main .about-us .about-img .img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+main .about-us .about-img .img-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+main .about-us .about-img .img-wrapper img:hover {
+  transform: scale(1) rotate(-4deg);
+}
+main .about-us .about-img .img-wrapper:last-child {
+  margin-top: 15px;
+}
+main .about-us .about-img .img-wrapper:first-child {
+  margin-bottom: 15px;
+}
+main .about-us .about-img .img-wrapper:first-child::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #a79373;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+main .about-us .about-img .img-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #faf7f4;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+main .about-us .about-img .frame-style {
+  position: relative;
+  display: inline-block;
+}
+main .about-us .about-img .frame-style img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+main .about-us .about-img .frame-style img:hover {
+  transform: scale(1) rotate(-4deg);
+}
+main .about-us .about-img .frame-style::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #faf7f4;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+main .container {
+  margin-bottom: 40px;
+}
+main .heritage .section-header {
+  background: #a79373;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 80px;
+}
+main .heritage .section-header::after {
+  content: "";
+  position: absolute;
+  bottom: -46px;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: url("../images/pattern.svg");
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: bottom;
+  transform: rotate(180deg);
+}
+main .heritage .heritage-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+@media (max-width: 992px) {
+  main .heritage .heritage-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  main .heritage .heritage-items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+main .heritage .heritage-items .heritage-card {
+  perspective: 1000px;
+  position: relative;
+  overflow: hidden;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+main .heritage .heritage-items .heritage-card:hover .heritage-card-inner {
+  transform: rotateY(180deg);
+}
+main .heritage .heritage-items .heritage-card .heritage-card-front,
+main .heritage .heritage-items .heritage-card .heritage-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid white;
+  border-style: dotted;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+main .heritage .heritage-items .heritage-card .heritage-card-front {
+  background: #a79373;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back {
+  background: #a79373;
+  color: black;
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back h2 {
+  margin-bottom: 10px;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button {
+  padding: 8px 24px;
+  background: #000;
+  color: #a79373;
+  display: block;
+  width: fit-content;
+  border-radius: 50px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button::before {
+  content: "";
+  top: -100%;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  background: #a79373;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button::after {
+  content: "";
+  top: 100%;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  background: #a79373;
+  z-index: -1;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button:hover {
+  color: #000;
+  border: 1px solid #000;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button:hover::before {
+  top: 0;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button:hover::after {
+  top: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
