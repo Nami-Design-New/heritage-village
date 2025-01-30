@@ -982,4 +982,135 @@ main .about-us .about-img .frame-style::after {
   box-sizing: border-box;
 }
 
+main .container {
+  margin-bottom: 40px;
+}
+main .heritage .section-header {
+  background: #a79373;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 80px;
+}
+main .heritage .section-header::after {
+  content: "";
+  position: absolute;
+  bottom: -46px;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: url("../images/pattern.svg");
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: bottom;
+  transform: rotate(180deg);
+}
+main .heritage .heritage-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+@media (max-width: 992px) {
+  main .heritage .heritage-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  main .heritage .heritage-items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+main .heritage .heritage-items .heritage-card {
+  perspective: 1000px;
+  position: relative;
+  overflow: hidden;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+main .heritage .heritage-items .heritage-card:hover .heritage-card-inner {
+  transform: rotateY(180deg);
+}
+main .heritage .heritage-items .heritage-card .heritage-card-front,
+main .heritage .heritage-items .heritage-card .heritage-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid white;
+  border-style: dotted;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+main .heritage .heritage-items .heritage-card .heritage-card-front {
+  background: #a79373;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back {
+  background: #a79373;
+  color: black;
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back h2 {
+  margin-bottom: 10px;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button {
+  padding: 8px 24px;
+  background: #000;
+  color: #a79373;
+  display: block;
+  width: fit-content;
+  border-radius: 50px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button::before {
+  content: "";
+  top: -100%;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  background: #a79373;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button::after {
+  content: "";
+  top: 100%;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  background: #a79373;
+  z-index: -1;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button:hover {
+  color: #000;
+  border: 1px solid #000;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button:hover::before {
+  top: 0;
+}
+main .heritage .heritage-items .heritage-card .heritage-card-back button:hover::after {
+  top: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
