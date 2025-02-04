@@ -36,7 +36,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css?v=3" />
 
     <title>القريــــة الشعبيــــة</title>
 </head>
@@ -59,7 +59,7 @@
                 <li><a href="heritage.html">التراث</a></li>
                 <li><a href="rooms.html">الغرف</a></li>
                 <li><a href="entertainmennt.html">الترفيه</a></li>
-                <li><a href="menu.html">قائمة الطعام</a></li>
+                <li><a href="https://heritage-village.com.sa/menu/" target="_blank">قائمة الطعام</a></li>
                 <li><a href="gallery.html">معرض الصور</a></li>
                 <li><a href="blog.html">الأخبار</a></li>
                 <li><a href="contact.html">اتصل بنا</a></li>
@@ -92,51 +92,51 @@
                     <div class="col-lg-4 col-md-6 col-12 p-2">
                         <div class="room_card" data-aos="fade-up">
                             <div class="img">
-                                <img src="assets/images/4.jpg" alt="">
+                                <img src="assets/images/room.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h6>أفضل 5 أنشطة يمكنك تجربتها في القرية الشعبية</h6>
+                                <h6>غرفه الامير</h6>
                                 <p>
                                     اكتشف أفضل الأنشطة التي يمكنك الاستمتاع بها في القرية الشعبية، من التسوق
                                     للمنتجات التراثية إلى الاستمتاع بالمأكولات الشعبية الشهية وتجربة
                                     الفعاليات
                                     الثقافية الفريدة.
                                 </p>
-                                <a href=""> إقرا المزيد </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز الان</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12 p-2">
                         <div class="room_card" data-aos="fade-up">
                             <div class="img">
-                                <img src="assets/images/4.jpg" alt="">
+                                <img src="assets/images/room.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h6>أفضل 5 أنشطة يمكنك تجربتها في القرية الشعبية</h6>
+                                <h6>غرفه الملك</h6>
                                 <p>
                                     اكتشف أفضل الأنشطة التي يمكنك الاستمتاع بها في القرية الشعبية، من التسوق
                                     للمنتجات التراثية إلى الاستمتاع بالمأكولات الشعبية الشهية وتجربة
                                     الفعاليات
                                     الثقافية الفريدة.
                                 </p>
-                                <a href=""> إقرا المزيد </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز الان</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12 p-2">
                         <div class="room_card" data-aos="fade-up">
                             <div class="img">
-                                <img src="assets/images/4.jpg" alt="">
+                                <img src="assets/images/room.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h6>أفضل 5 أنشطة يمكنك تجربتها في القرية الشعبية</h6>
+                                <h6>غرفه الشيخ</h6>
                                 <p>
                                     اكتشف أفضل الأنشطة التي يمكنك الاستمتاع بها في القرية الشعبية، من التسوق
                                     للمنتجات التراثية إلى الاستمتاع بالمأكولات الشعبية الشهية وتجربة
                                     الفعاليات
                                     الثقافية الفريدة.
                                 </p>
-                                <a href=""> إقرا المزيد </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#bookingModal">حجز الان</a>
                             </div>
                         </div>
                     </div>
@@ -217,6 +217,45 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">
+                        حجز غرفه الامير
+                    </h5>
+                    <button type="button" class="btn-close" style="box-shadow: none !important" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="p-0">
+                        <div class="input_field">
+                            <label for="name" id="name">الاسم كاملاٌ</label>
+                            <input type="text" placeholder="الاسم" required>
+                        </div>
+                        <div class="input_field">
+                            <label for="name" id="name">البريد الإلكتروني</label>
+                            <input type="email" placeholder="example@ex.com" required>
+                        </div>
+                        <div class="input_field">
+                            <label for="phone" id="phone">رقم الجوال</label>
+                            <input type="tel" placeholder="0123456789" required>
+                        </div>
+                        <div class="input_field">
+                            <label for="phone" id="phone">التاريخ</label>
+                            <input type="date" required>
+                        </div>
+
+                        <button>ارسال</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="assets/js/main.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
