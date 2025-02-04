@@ -72,3 +72,36 @@ const servicesSlider = new Swiper(".gallery_swiper", {
     },
   },
 });
+// blog details
+function updateMainGallery(sidebarId, mainImageId, mainCaptionId) {
+  const sidebar = document.getElementById(sidebarId);
+  const mainImage = document.getElementById(mainImageId);
+  const mainCaption = document.getElementById(mainCaptionId);
+
+  // Set the default active item
+  const defaultActiveItem = sidebar.querySelector('ul li.active');
+  if (defaultActiveItem) {
+      const imageSrc = defaultActiveItem.querySelector('img').src;
+      const captionText = defaultActiveItem.querySelector('span').innerText;
+      mainImage.src = imageSrc;
+      mainCaption.innerText = captionText;
+  }
+
+  // Add click event listeners to all items
+  sidebar.querySelectorAll('ul li').forEach(item => {
+      item.addEventListener('click', () => {
+          // Remove active class from all items
+          sidebar.querySelectorAll('ul li').forEach(li => li.classList.remove('active'));
+          // Add active class to the clicked item
+          item.classList.add('active');
+          // Update the main image and caption
+          const imageSrc = item.querySelector('img').src;
+          const captionText = item.querySelector('span').innerText;
+          mainImage.src = imageSrc;
+          mainCaption.innerText = captionText;
+      });
+  });
+}
+
+updateMainGallery('sidebar-most-viewed', 'main-image-most-viewed', 'main-caption-most-viewed');
+updateMainGallery('sidebar-featured', 'main-image-featured', 'main-caption-featured');
