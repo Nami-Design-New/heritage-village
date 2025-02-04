@@ -80,8 +80,6 @@
         </nav>
     </header>
 
-
-
     <main>
         <section class="contact_us">
             <section class="section-header">
@@ -91,7 +89,7 @@
                     لا تتردد في الاتصال بنا. فريقنا جاهز للإجابة على جميع أسئلتك وتقديم الدعم الذي تحتاجه.
                 </p>
             </section>
-            <section class="container ">
+            <section class="container mb-5">
                 <div class="row text-center">
                     <div class="col-md-4 mb-3">
                         <div class="info-box p-4 rounded">
@@ -174,6 +172,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="map map_section"></div>
             </section>
         </section>
     </main>
@@ -250,13 +249,60 @@
             </div>
         </div>
     </footer>
+
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbazTEugbVa6nosp0-21SCtN-GHSSQd2s"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <script>
-        AOS.init();
+        let locationMap;
+
+        function initMap() {
+            const location = { lat: 26.428728, lng: 50.088794 };
+            locationMap = new google.maps.Map(document.querySelector(".map_section"), {
+                center: location,
+                zoom: 16,
+                styles: [
+                    { "elementType": "geometry", "stylers": [{ "color": "#000" }] },
+                    { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] },
+                    { "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] },
+                    { "elementType": "labels.text.stroke", "stylers": [{ "color": "#000" }] },
+                    { "featureType": "administrative", "elementType": "geometry", "stylers": [{ "color": "#757575" }] },
+                    { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#aa967450" }] },
+                    { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#000000" }] },
+                    { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#3d3d3d" }] }
+                ],
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: true,
+                zoomControl: true,
+                scaleControl: false
+            });
+
+            const marker = new google.maps.Marker({
+                position: location,
+                map: locationMap,
+                title: "القرية الشعبية في الدمام",
+                animation: google.maps.Animation.DROP
+            });
+
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="text-align: right; direction: rtl; padding: 5px;">
+                        <h5 style="margin: 0 0 5px 0;">القرية الشعبية في الدمام</h5>
+                        <p style="margin: 0;">طريق الكورنيش، الدمام، المنطقة الشرقية</p>
+                        <a href="https://www.example.com" target="_blank" style="color: #aa9674; text-decoration: none;">زيارة الموقع</a>
+                    </div>
+                `
+            });
+
+            marker.addListener('click', () => {
+                infoWindow.open(locationMap, marker);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", initMap);
     </script>
 </body>
 
